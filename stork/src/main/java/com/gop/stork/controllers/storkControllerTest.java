@@ -16,4 +16,13 @@ public class storkControllerTest {
 		return "mosaic";
 	}
 	
+	@GetMapping("/inpainting")
+	public String inpainting() {
+		return "inpainting";
+	}
+	
+	@GetMapping("/newmodel")
+	public String newmodel() {
+		return "newmodel";
+	}
 }

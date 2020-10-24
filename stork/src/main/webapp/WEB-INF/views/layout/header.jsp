@@ -54,7 +54,7 @@
         <a class="nav-link" href="/inpainting">Inpainting</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/watershed">WaterShed</a>
+        <a class="nav-link" href="/newmodel">Newmodel</a>
       </li>    
     </ul>
   </div>  
