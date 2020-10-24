@@ -11,4 +11,9 @@ public class storkControllerTest {
 		return "index";
 	}
 	
+	@GetMapping("/mosaic")
+	public String mosaic() {
+		return "mosaic";
+	}
+	
 }
