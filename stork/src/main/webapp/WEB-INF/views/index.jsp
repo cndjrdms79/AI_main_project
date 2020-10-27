@@ -61,7 +61,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Mosaic </span></h2>
+        <h2 class="featurette-heading">Mosaic</h2>
         <p class="lead">this is mosaic. you know what i'm saying?</p>
       </div>
       <div class="col-md-5">
@@ -73,7 +73,7 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Image Inpainting </span></h2>
+        <h2 class="featurette-heading">Image Inpainting</h2>
         <p class="lead">this is image inpainting. you know what i'm saying?</p>
       </div>
       <div class="col-md-5 order-md-1">
@@ -85,7 +85,7 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">Watershed</span></h2>
+        <h2 class="featurette-heading">Watershed</h2>
         <p class="lead">this is image Watershed. you know what i'm saying?</p>
       </div>
       <div class="col-md-5">

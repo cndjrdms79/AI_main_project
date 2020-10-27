@@ -25,4 +25,9 @@ public class storkControllerTest {
 	public String newmodel() {
 		return "newmodel";
 	}
+	
+	@GetMapping("/paint")
+	public String paint() {
+		return "paint";
+	}
 }
