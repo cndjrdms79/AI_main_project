@@ -15,4 +15,5 @@
 
 <!-- Dropzone.js -->
 <script src="resources/js//dropzone/dist/min/dropzone.min.js"></script>
+
 <%@ include file="layout/footer.jsp" %>
