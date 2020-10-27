@@ -14,8 +14,8 @@ img {
 	margin: 0px auto;
 }
 </style>
-<a href=""><img src="resources/img/choose.jpg" alt="..."
-	class="img-thumbnail center-block" /></a>
+<img src="resources/img/choose.jpg" alt="..."
+	class="img-thumbnail center-block" />
 </br>
 </br>
 </br>
