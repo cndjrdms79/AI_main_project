@@ -17,7 +17,8 @@
 					<h1>Mosaic</h1>
 					<p>this is mosaic. you know what i'm saying?</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Start Mosaic</a>
+						<a class="btn btn-lg btn-primary" href="/mosaic" role="button">Sign
+							up today</a>
 					</p>
 				</div>
 			</div>
@@ -29,7 +30,8 @@
 					<h1>Image Inpainting</h1>
 					<p>this is image inpainting. you know what i'm saying?</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Start Inpainting</a>
+						<a class="btn btn-lg btn-primary" href="/inpainting" role="button">Learn
+							more</a>
 					</p>
 				</div>
 			</div>
@@ -42,7 +44,8 @@
 					<h1>Watershed</h1>
 					<p>this is watershed. you know what i'm saying?</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Start Watershed</a>
+						<a class="btn btn-lg btn-primary" href="/watershed" role="button">Browse
+							gallery</a>
 					</p>
 				</div>
 			</div>
