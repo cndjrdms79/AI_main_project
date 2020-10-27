@@ -15,8 +15,14 @@ img {
 	margin: 0px auto;
 }
 </style>
+<<<<<<< HEAD
 <input type="image" src="resources/img/choose.jpg"
 	class="img-thumbnail center-block" />
+=======
+<img src="resources/img/choose.jpg" alt="..."
+	class="img-thumbnail center-block" />
+</br>
+>>>>>>> refs/remotes/origin/master
 </br>
 </br>
 </br>

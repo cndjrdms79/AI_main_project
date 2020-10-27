@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 
 <%@ include file="layout/header.jsp" %>
 
@@ -102,3 +103,8 @@
 
 <%@ include file="layout/footer.jsp" %>
 
+=======
+<script type="text/javascript">
+	location.href = 'main';
+</script>
+>>>>>>> refs/remotes/origin/master

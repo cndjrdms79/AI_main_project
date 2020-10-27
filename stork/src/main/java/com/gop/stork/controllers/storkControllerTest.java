@@ -11,6 +11,11 @@ public class storkControllerTest {
 		return "index";
 	}
 	
+	@GetMapping("/main")
+	public String main() {
+		return "main";
+	}
+	
 	@GetMapping("/mosaic")
 	public String mosaic() {
 		return "mosaic";
@@ -21,9 +26,9 @@ public class storkControllerTest {
 		return "inpainting";
 	}
 	
-	@GetMapping("/newmodel")
-	public String newmodel() {
-		return "newmodel";
+	@GetMapping("/watershed")
+	public String watershed() {
+		return "watershed";
 	}
 	
 	@GetMapping("/paint")

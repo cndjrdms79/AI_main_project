@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@ include file="layout/header.jsp" %>
 
 </br>
@@ -9,9 +8,6 @@
 </br>
 </br>
 
-<<<<<<< HEAD
-    <hr class="featurette-divider">
-=======
 <style>
 img {
 	display: block;
@@ -25,5 +21,4 @@ img {
 </br>
 </br>
 
->>>>>>> refs/remotes/origin/master
 <%@ include file="layout/footer.jsp" %>
