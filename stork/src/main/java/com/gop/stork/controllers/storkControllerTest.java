@@ -35,4 +35,9 @@ public class storkControllerTest {
 	public String paint() {
 		return "paint";
 	}
+	
+	@GetMapping("/crop")
+	public String crop() {
+		return "cropper";
+	}
 }
