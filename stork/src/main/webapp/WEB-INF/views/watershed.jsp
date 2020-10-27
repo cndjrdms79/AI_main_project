@@ -15,7 +15,7 @@ img {
 }
 </style>
 <img src="resources/img/choose.jpg" alt="..."
-	class="img-thumbnail center-block" />
+	class="img-thumbnail center-block" href=""/>
 </br>
 </br>
 </br>

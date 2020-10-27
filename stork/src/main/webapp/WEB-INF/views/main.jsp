@@ -19,7 +19,7 @@
 						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
 						id nibh ultricies vehicula ut id elit.</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Sign
+						<a class="btn btn-lg btn-primary" href="/mosaic" role="button">Sign
 							up today</a>
 					</p>
 				</div>
@@ -35,7 +35,7 @@
 						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
 						id nibh ultricies vehicula ut id elit.</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Learn
+						<a class="btn btn-lg btn-primary" href="/inpainting" role="button">Learn
 							more</a>
 					</p>
 				</div>
@@ -51,7 +51,7 @@
 						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
 						id nibh ultricies vehicula ut id elit.</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="#" role="button">Browse
+						<a class="btn btn-lg btn-primary" href="/watershed" role="button">Browse
 							gallery</a>
 					</p>
 				</div>
