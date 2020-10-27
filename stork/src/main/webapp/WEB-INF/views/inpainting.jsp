@@ -9,9 +9,7 @@
 </br>
 </br>
 
-<<<<<<< HEAD
     <hr class="featurette-divider">
-=======
 <style>
 img {
 	display: block;
@@ -25,5 +23,5 @@ img {
 </br>
 </br>
 
->>>>>>> refs/remotes/origin/master
+    <hr class="featurette-divider">
 <%@ include file="layout/footer.jsp" %>

@@ -15,26 +15,12 @@ img {
 	margin: 0px auto;
 }
 </style>
-<<<<<<< HEAD
-<input type="image" src="resources/img/choose.jpg"
-	class="img-thumbnail center-block" />
-=======
 <img src="resources/img/choose.jpg" alt="..."
 	class="img-thumbnail center-block" />
 </br>
->>>>>>> refs/remotes/origin/master
 </br>
 </br>
 </br>
-
-<div class="container">
-  <form action="/action_page.php">
-    <div class="form-group">
-      <input type="image" class="img-thumbnail center-block"
-      		src="resources/img/choose.jpg">
-    </div>
-  </form>
-</div>
     <hr class="featurette-divider">
     
     

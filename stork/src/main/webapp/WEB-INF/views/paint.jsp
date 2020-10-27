@@ -45,10 +45,6 @@
       <div class="controls__color jsColor" style="background-color: #5ac8fa"></div>
       <div class="controls__color jsColor" style="background-color: #0579FF"></div>
       <div class="controls__color jsColor" style="background-color: #5856D6"></div>
-      <label for="jsMyColorControl">
-        <div class="controls__color jsColor" id="jsMyColor" style="background-color: white">My</div>
-      </label>
-      <input type="color" id="jsMyColorControl" name="jsMyColorControl" value="#ffffff" style="display:none">
     </div>
   </div>
   <script src="resources/js/painting.js"></script>
