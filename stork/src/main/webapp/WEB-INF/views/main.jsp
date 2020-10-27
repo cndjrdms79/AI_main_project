@@ -14,7 +14,7 @@
 				height="500">
 			<div class="container">
 				<div class="carousel-caption text-left">
-					<h1>Example headline.</h1>
+					<h1>Mosaic</h1>
 					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
 						id nibh ultricies vehicula ut id elit.</p>
@@ -30,7 +30,7 @@
 				height="500">
 			<div class="container">
 				<div class="carousel-caption">
-					<h1>Another example headline.</h1>
+					<h1>Image Inpainting</h1>
 					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
 						id nibh ultricies vehicula ut id elit.</p>
@@ -46,7 +46,7 @@
 				height="500">
 			<div class="container">
 				<div class="carousel-caption text-right">
-					<h1>One more for good measure.</h1>
+					<h1>Watershed</h1>
 					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
 						id nibh ultricies vehicula ut id elit.</p>

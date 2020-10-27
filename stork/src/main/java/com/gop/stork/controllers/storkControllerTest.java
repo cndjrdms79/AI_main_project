@@ -26,8 +26,8 @@ public class storkControllerTest {
 		return "inpainting";
 	}
 	
-	@GetMapping("/newmodel")
-	public String newmodel() {
-		return "newmodel";
+	@GetMapping("/watershed")
+	public String watershed() {
+		return "watershed";
 	}
 }
