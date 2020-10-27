@@ -30,4 +30,9 @@ public class storkControllerTest {
 	public String watershed() {
 		return "watershed";
 	}
+	
+	@GetMapping("/paint")
+	public String paint() {
+		return "paint";
+	}
 }

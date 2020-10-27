@@ -15,9 +15,7 @@
 			<div class="container">
 				<div class="carousel-caption text-left">
 					<h1>Mosaic</h1>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
-						id nibh ultricies vehicula ut id elit.</p>
+					<p>this is mosaic. you know what i'm saying?</p>
 					<p>
 						<a class="btn btn-lg btn-primary" href="/mosaic" role="button">Sign
 							up today</a>
@@ -26,14 +24,11 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="resources/img/chicago.jpg" alt="Los Angeles" width="1100"
-				height="500">
+			<img src="resources/img/chicago.jpg" alt="Los Angeles" width="1100" height="500">
 			<div class="container">
 				<div class="carousel-caption">
 					<h1>Image Inpainting</h1>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
-						id nibh ultricies vehicula ut id elit.</p>
+					<p>this is image inpainting. you know what i'm saying?</p>
 					<p>
 						<a class="btn btn-lg btn-primary" href="/inpainting" role="button">Learn
 							more</a>
@@ -47,9 +42,7 @@
 			<div class="container">
 				<div class="carousel-caption text-right">
 					<h1>Watershed</h1>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-						Donec id elit non mi porta gravida at eget metus. Nullam id dolor
-						id nibh ultricies vehicula ut id elit.</p>
+					<p>this is watershed. you know what i'm saying?</p>
 					<p>
 						<a class="btn btn-lg btn-primary" href="/watershed" role="button">Browse
 							gallery</a>
@@ -78,7 +71,7 @@
 	<div class="row featurette">
 		<div class="col-md-7">
 			<h2 class="featurette-heading">
-				Mosaic </span>
+				Mosaic 
 			</h2>
 			<p class="lead">this is mosaic. you know what i'm saying?</p>
 		</div>
@@ -99,7 +92,7 @@
 	<div class="row featurette">
 		<div class="col-md-7 order-md-2">
 			<h2 class="featurette-heading">
-				Image Inpainting </span>
+				Image Inpainting 
 			</h2>
 			<p class="lead">this is image inpainting. you know what i'm
 				saying?</p>
@@ -121,7 +114,7 @@
 	<div class="row featurette">
 		<div class="col-md-7">
 			<h2 class="featurette-heading">
-				Watershed</span>
+				Watershed
 			</h2>
 			<p class="lead">this is image Watershed. you know what i'm
 				saying?</p>
