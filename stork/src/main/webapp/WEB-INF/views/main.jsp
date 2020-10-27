@@ -10,42 +10,37 @@
 	</ol>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="resources/img/chicago.jpg" alt="Los Angeles" width="1100"
-				height="500">
+			<img src="resources/img/chicago.jpg" alt="Los Angeles">
 			<div class="container">
 				<div class="carousel-caption text-left">
 					<h1>Mosaic</h1>
 					<p>this is mosaic. you know what i'm saying?</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="/mosaic" role="button">Sign
-							up today</a>
+						<a class="btn btn-lg btn-primary" href="/mosaic" role="button">Signup today</a>
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="resources/img/chicago.jpg" alt="Los Angeles" width="1100" height="500">
+			<img src="resources/img/chicago.jpg" alt="Los Angeles">
 			<div class="container">
 				<div class="carousel-caption">
 					<h1>Image Inpainting</h1>
 					<p>this is image inpainting. you know what i'm saying?</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="/inpainting" role="button">Learn
-							more</a>
+						<a class="btn btn-lg btn-primary" href="/inpainting" role="button">Learnmore</a>
 					</p>
 				</div>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="resources/img/chicago.jpg" alt="Los Angeles" width="1100"
-				height="500">
+			<img src="resources/img/chicago.jpg" alt="Los Angeles">
 			<div class="container">
 				<div class="carousel-caption text-right">
 					<h1>Watershed</h1>
 					<p>this is watershed. you know what i'm saying?</p>
 					<p>
-						<a class="btn btn-lg btn-primary" href="/watershed" role="button">Browse
-							gallery</a>
+						<a class="btn btn-lg btn-primary" href="/watershed" role="button">Browsegallery</a>
 					</p>
 				</div>
 			</div>
@@ -81,8 +76,7 @@
 				width="500" height="500" xmlns="http://www.w3.org/2000/svg"
 				preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
 				aria-label="Placeholder: 500x500">
-				<title>Placeholder</title><rect width="100%" height="100%"
-					fill="#eee"></rect>
+				<title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect>
 				<text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
 		</div>
 	</div>
@@ -94,8 +88,7 @@
 			<h2 class="featurette-heading">
 				Image Inpainting 
 			</h2>
-			<p class="lead">this is image inpainting. you know what i'm
-				saying?</p>
+			<p class="lead">this is image inpainting. you know what i'm saying?</p>
 		</div>
 		<div class="col-md-5 order-md-1">
 			<svg
@@ -116,8 +109,7 @@
 			<h2 class="featurette-heading">
 				Watershed
 			</h2>
-			<p class="lead">this is image Watershed. you know what i'm
-				saying?</p>
+			<p class="lead">this is image Watershed. you know what i'm saying?</p>
 		</div>
 		<div class="col-md-5">
 			<svg
