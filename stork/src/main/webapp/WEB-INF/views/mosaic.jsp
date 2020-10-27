@@ -3,25 +3,17 @@
     
 <%@ include file="layout/header.jsp" %>
 
-</br>
-</br>
-</br>
-</br>
-</br>
+<!-- Dropzone.js -->
+<link href="resources/js/dropzone/dist/min/dropzone.min.css"
+	rel="stylesheet">
 
-<style>
-img {
-	display: block;
-	margin: 0px auto;
-}
-</style>
-<a href=""><img src="resources/img/choose.jpg" alt="..."
-	class="img-thumbnail center-block" /></a>
-</br>
-</br>
-</br>
-</br>
-    <hr class="featurette-divider">
-    
-    
+<form action="form_upload.html" class="dropzone dz-clickable">
+	<div class="dz-default dz-message">
+		<span>Drop files here to upload</span>
+	</div>
+</form>
+
+<!-- Dropzone.js -->
+<script src="resources/js//dropzone/dist/min/dropzone.min.js"></script>
+
 <%@ include file="layout/footer.jsp" %>
