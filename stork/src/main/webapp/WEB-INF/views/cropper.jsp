@@ -1,39 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Cropper.js</title>
-  <link rel="stylesheet" href="resources/css/cropper.css">
-  <style>
-    .container {
-      margin: 20px auto;
-      max-width: 640px;
-    }
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Cropper.js</title>
+<link rel="stylesheet" href="resources/css/cropper.css">
+<style>
+.container {
+	margin: 20px auto;
+	max-width: 640px;
+}
 
-    img {
-      max-width: 100%;
-    }
-  </style>
+img {
+	max-width: 100%;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Cropper with a range of aspect ratio</h1>
-    <div>
-      <img id="image" src="resources/img/chicago.jpg" alt="Picture">
-    </div>
-    <h3>Result</h3>
-    <p>
-      <button type="button" id="button">Crop</button>
-    </p>
-    <div id="result"></div>
-  </div>
-  <script src="resources/js/cropper.js"></script>
-  <script>
+	<div class="container">
+		<h1>Cropper with a range of aspect ratio</h1>
+		<div>
+			<img id="image" src="resources/img/chicago.jpg" alt="Picture">
+		</div>
+		<h3>Result</h3>
+		<p>
+			<button type="button" id="button">Crop</button>
+		</p>
+		<div id="result"></div>
+	</div>
+	<script src="resources/js/cropper.js"></script>
+	<script>
     function getRoundedCanvas(sourceCanvas) {
       var canvas = document.createElement('canvas');
       var context = canvas.getContext('2d');

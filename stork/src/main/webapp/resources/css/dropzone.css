@@ -1,0 +1,74 @@
+@import
+	url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i)
+	;
+div.inner {
+	outline: 1px solid #424242;
+	background-color: #fff;
+	width: 512px;
+	height: 512px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-line-pack: center;
+	align-content: center
+}
+
+.dropzone {
+	cursor: pointer;
+	width: 100%;
+	height: 100%
+}
+
+.no-image {
+	width: 100%;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-direction: column;
+	flex-direction: column
+}
+
+.no-image>* {
+	display: block
+}
+
+.no-image h3 {
+	color: #9e9e9e;
+	font-family: DINWebPro, Open Sans, sans-serif;
+	font-size: 28px;
+	font-weight: 300;
+	line-height: 28px;
+	margin-top: 170px
+}
+
+.no-image h3, .upload-box {
+	text-align: center;
+	margin-bottom: 28px
+}
+
+.upload-box {
+	border: 1px dashed #9e9e9e;
+	border-radius: 4px;
+	background-color: #fff;
+	padding: 28px;
+	color: #616161;
+	font-size: 14px;
+	line-height: 18px
+}
+
+.upload-box i {
+	margin-right: 7px
+}
+
+.no-image>p {
+	color: #9e9e9e;
+	text-align: center
+}
