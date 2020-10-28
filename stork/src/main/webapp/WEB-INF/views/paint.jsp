@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<!-- 
   <div class="title">Painter</div>
   <div class="controls">
     <div class="controls__size">
@@ -23,6 +24,7 @@
       <button id="jsResize">Resize</button>
     </div>
   </div>
+   -->
   <div class="content">
     <canvas id="jsCanvas" class="canvas"></canvas>
   </div>
@@ -35,6 +37,7 @@
       <button id="jsSave">Save</button>
       <button id="jsReset">Reset</button>
     </div>
+ 
     <div class="controls__colors" id="jsColors">
       <div class="controls__color jsColor" style="background-color: #2c2c2c"></div>
       <div class="controls__color jsColor" style="background-color: white"></div>
@@ -46,6 +49,7 @@
       <div class="controls__color jsColor" style="background-color: #0579FF"></div>
       <div class="controls__color jsColor" style="background-color: #5856D6"></div>
     </div>
+
   </div>
   <script src="resources/js/painting.js"></script>
 </body>

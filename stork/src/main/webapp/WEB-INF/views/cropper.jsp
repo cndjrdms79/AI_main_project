@@ -26,47 +26,61 @@
     <div>
       <img id="image" src="resources/img/chicago.jpg" alt="Picture">
     </div>
+    <h3>Result</h3>
+    <p>
+      <button type="button" id="button">Crop</button>
+    </p>
+    <div id="result"></div>
   </div>
   <script src="resources/js/cropper.js"></script>
   <script>
+    function getRoundedCanvas(sourceCanvas) {
+      var canvas = document.createElement('canvas');
+      var context = canvas.getContext('2d');
+      var width = sourceCanvas.width;
+      var height = sourceCanvas.height;
+
+      canvas.width = width;
+      canvas.height = height;
+      context.imageSmoothingEnabled = true;
+      context.drawImage(sourceCanvas, 0, 0, width, height);
+      context.globalCompositeOperation = 'destination-in';
+      context.beginPath();
+      context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI, true);
+      context.fill();
+      return canvas;
+    }
+
     window.addEventListener('DOMContentLoaded', function () {
-      var image = document.querySelector('#image');
-      var minAspectRatio = 0.5;
-      var maxAspectRatio = 1.5;
+      var image = document.getElementById('image');
+      var button = document.getElementById('button');
+      var result = document.getElementById('result');
+      var croppable = false;
       var cropper = new Cropper(image, {
+        aspectRatio: 1,
+        viewMode: 1,
         ready: function () {
-          var cropper = this.cropper;
-          var containerData = cropper.getContainerData();
-          var cropBoxData = cropper.getCropBoxData();
-          var aspectRatio = cropBoxData.width / cropBoxData.height;
-          var newCropBoxWidth;
-
-          if (aspectRatio < minAspectRatio || aspectRatio > maxAspectRatio) {
-            newCropBoxWidth = cropBoxData.height * ((minAspectRatio + maxAspectRatio) / 2);
-
-            cropper.setCropBoxData({
-              left: (containerData.width - newCropBoxWidth) / 2,
-              width: newCropBoxWidth
-            });
-          }
-        },
-
-        cropmove: function () {
-          var cropper = this.cropper;
-          var cropBoxData = cropper.getCropBoxData();
-          var aspectRatio = cropBoxData.width / cropBoxData.height;
-
-          if (aspectRatio < minAspectRatio) {
-            cropper.setCropBoxData({
-              width: cropBoxData.height * minAspectRatio
-            });
-          } else if (aspectRatio > maxAspectRatio) {
-            cropper.setCropBoxData({
-              width: cropBoxData.height * maxAspectRatio
-            });
-          }
+          croppable = true;
         },
       });
+
+      button.onclick = function () {
+        var croppedCanvas;
+        var croppedImage;
+
+        if (!croppable) {
+          return;
+        }
+
+        // Crop
+        croppedCanvas = cropper.getCroppedCanvas();
+
+        // Show
+        croppedImage = document.createElement('img');
+        croppedImage.src = croppedCanvas.toDataURL()
+        result.innerHTML = '';
+        result.appendChild(croppedImage);
+      };
     });
   </script>
 </body>

@@ -13,6 +13,8 @@
 	</div>
 </form>
 
+	<a class="btn btn-lg btn-primary" href="/crop" role="button">cropper</a>
+
 <!-- Dropzone.js -->
 <script src="resources/js//dropzone/dist/min/dropzone.min.js"></script>
 <%@ include file="layout/footer.jsp" %>
