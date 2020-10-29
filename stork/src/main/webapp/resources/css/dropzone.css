@@ -1,13 +1,14 @@
 @import
 	url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i)
 	;
-div.inner {
+div.file-upload {
 	outline: 1px solid #424242;
 	background-color: #fff;
 	width: 512px;
 	height: 512px;
 	display: -ms-flexbox;
 	display: flex;
+	display: center;
 	-ms-flex-direction: column;
 	flex-direction: column;
 	-ms-flex-align: center;
@@ -16,13 +17,24 @@ div.inner {
 	align-content: center
 }
 
-.dropzone {
+.image-upload-wrap {
 	cursor: pointer;
 	width: 100%;
 	height: 100%
 }
 
-.no-image {
+.file-upload-input {
+	position: absolute;
+	margin:0;
+	padding: 0;
+	width: 512px;
+	height: 512px;
+	outline: none;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.drag-text {
 	width: 100%;
 	display: -ms-flexbox;
 	display: flex;
@@ -36,11 +48,11 @@ div.inner {
 	flex-direction: column
 }
 
-.no-image>* {
+.drag-text>* {
 	display: block
 }
 
-.no-image h3 {
+.drag-text h3 {
 	color: #9e9e9e;
 	font-family: DINWebPro, Open Sans, sans-serif;
 	font-size: 28px;
@@ -49,7 +61,7 @@ div.inner {
 	margin-top: 170px
 }
 
-.no-image h3, .upload-box {
+.drag-text h3, .upload-box {
 	text-align: center;
 	margin-bottom: 28px
 }
@@ -68,7 +80,96 @@ div.inner {
 	margin-right: 7px
 }
 
-.no-image>p {
+.drag-text>p {
 	color: #9e9e9e;
 	text-align: center
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-image {
+  max-height: 500px;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.ui.icon.cloud-upload-line:before {
+	content: "\E0A5"
+}
+
+.remove-image {
+	color: #76b900;
+	background: transparent
+}
+
+.remove-image.accessible, .remove-image.accessible:hover {
+	color: #004831
+}
+
+.remove-image:hover {
+	color: #569700;
+	background: #eff7e0
+}
+
+.remove-image:active {
+	padding: 6px 13px;
+	border: 1px solid #bbdc80;
+	background: #eff7e0
+}
+
+.remove-image.neutral {
+	color: #616161
+}
+
+.remove-image.neutral:hover {
+	color: #424242;
+	background: #fafafa
+}
+
+.remove-image.neutral:active {
+	padding: 6px 13px;
+	border: 1px solid #e0e0e0;
+	background: #fafafa
+}
+
+.remove-image.danger {
+	color: #f03232
+}
+
+.remove-image.danger:hover {
+	color: #c40019;
+	background: #ffeaeb
+}
+
+.remove-image.danger:active {
+	border-color: #ff786d;
+	background: #ffeaeb
+}
+
+.remove-image:disabled {
+	color: #e0e0e0 !important;
+	background: transparent !important
+}
+
+
+.remove-image>a, .ui.button:not(.primary):not(.flat)>a {
+	color: #76b900
+}
+
+.remove-image.neutral>a, .ui.button:not(.primary):not(.flat).neutral>a
+	{
+	color: #616161
+}
+
+.remove-image.disabled>a, .ui.button:not(.primary):not(.flat).disabled>a
+	{
+	color: #fff
+}
+
+.remove-image.danger>a, .ui.button:not(.primary):not(.flat).danger>a {
+	color: #f03232
 }
