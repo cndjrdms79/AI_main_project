@@ -136,40 +136,37 @@ div.file-upload {
 	background: #fafafa
 }
 
-.remove-image.danger {
-	color: #f03232
+.next-step {
+	color: rgb(255, 255, 255);
+	background: #76b900
 }
 
-.remove-image.danger:hover {
-	color: #c40019;
-	background: #ffeaeb
+.next-step.accessible, .remove-image.accessible:hover {
+	color: #004831
 }
 
-.remove-image.danger:active {
-	border-color: #ff786d;
-	background: #ffeaeb
+.next-step:hover {
+	color: #569700;
+	background: #eff7e0
 }
 
-.remove-image:disabled {
-	color: #e0e0e0 !important;
-	background: transparent !important
+.next-step:active {
+	padding: 6px 13px;
+	border: 1px solid #569700;
+	background: #eff7e0
 }
 
-
-.remove-image>a, .ui.button:not(.primary):not(.flat)>a {
-	color: #76b900
-}
-
-.remove-image.neutral>a, .ui.button:not(.primary):not(.flat).neutral>a
-	{
+.next-step.neutral {
 	color: #616161
 }
 
-.remove-image.disabled>a, .ui.button:not(.primary):not(.flat).disabled>a
-	{
-	color: #fff
+.next-step.neutral:hover {
+	color: #424242;
+	background: #569700
 }
 
-.remove-image.danger>a, .ui.button:not(.primary):not(.flat).danger>a {
-	color: #f03232
+.next-step.neutral:active {
+	padding: 6px 13px;
+	border: 1px solid #e0e0e0;
+	background: #569700
 }

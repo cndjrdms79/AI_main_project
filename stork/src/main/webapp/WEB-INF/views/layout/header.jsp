@@ -16,15 +16,15 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Dropzone.css -->
 <link rel="stylesheet" type="text/css" href="resources/css/dropzone.css">	
+<!-- cropper.css -->
+<link rel="stylesheet" href="resources/css/cropper.css">
 <style>
 /* Make the image fully responsive */
 .carousel-inner img {
 	width: 100%;
 	height: 100%;
 }
-</style>
 
-<style>
 .bd-placeholder-img {
 	font-size: 1.125rem;
 	text-anchor: middle;

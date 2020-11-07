@@ -11,29 +11,34 @@
 <script class="jsbin"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-<div class="file-upload">
-	<div class="image-upload-wrap" aria-disabled="false">
-		<div class="drag-text">
-			<input class="file-upload-input" type='file'
-				onchange="readURL(this);" accept="image/*" autocomplete="off" />
-			<h3>Choose an image</h3>
-			<div class="upload-box">
-				<i aria-hidden="true" class="ui icon cloud-upload-line"></i><span>Drop
-					files to upload or click anywhere in the box to browse.</span>
+<form action="http://localhost:5000/fileUpload" method="POST" enctype="multipart/form-data">
+	<div class="file-upload">
+		<div class="image-upload-wrap" aria-disabled="false">
+			<div class="drag-text">
+				<input class="file-upload-input" type='file' name='file'
+					onchange="readURL(this);" accept="image/*" autocomplete="off" />
+				<h3>Choose an image</h3>
+				<div class="upload-box">
+					<i aria-hidden="true" class="ui icon cloud-upload-line"></i><span>Drop
+						files to upload or click anywhere in the box to browse.</span>
+				</div>
+				<p>Photos must be either JPG or PNG format.</p>
 			</div>
-			<p>Photos must be either JPG or PNG format.</p>
+		</div>
+
+		<div class="file-upload-content">
+			<img class="file-upload-image" src="#" alt="your image" />
+			<div class="image-title-wrap">
+				<button class="remove-image" type="button" onclick="removeUpload()">Change
+					Image</button>
+				<input class="remove-image" type="submit" name="Next Step">
+			</div>
 		</div>
 	</div>
+</form>
 
-	<div class="file-upload-content">
-		<img class="file-upload-image" src="#" alt="your image" />
-		<div class="image-title-wrap">
-			<button class="remove-image" type="button" onclick="removeUpload()">Change
-				Image</button>
-		</div>
-	</div>
-</div>
-
+<script src="resources/js/FileSaver.js"></script>
+<script src="resources/js/html2canvas.js"></script>
 <!-- Dropzone.js -->
 <script src="resources/js/dropzone.js"></script>
 
