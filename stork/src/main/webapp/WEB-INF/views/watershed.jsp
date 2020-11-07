@@ -11,7 +11,7 @@
 <script class="jsbin"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-<form id="fileform" action="http://localhost:5000/fileUpload" method="POST" enctype="multipart/form-data">
+<form id="fileform" action="http://localhost:5000/watershedUpload" method="POST" enctype="multipart/form-data">
 	<div class="file-upload">
 		<div class="image-upload-wrap" aria-disabled="false">
 			<div class="drag-text">
