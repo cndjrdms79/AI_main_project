@@ -40,4 +40,9 @@ public class storkControllerTest {
 	public String cropper() {
 		return "cropper";
 	}
+	
+	@GetMapping("/upload")
+	public String upload() {
+		return "upload";
+	}
 }
