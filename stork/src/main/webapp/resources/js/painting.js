@@ -1,8 +1,9 @@
 // Constant
-const INITIAL_COLOR = '#2c2c2c'
-const INITIAL_BG_COLOR = 'white';
-const INITIAL_LINE_WIDTH = 2.5;
+const INITIAL_COLOR = 'white'
+const INITIAL_BG_COLOR = 'black';
+const INITIAL_LINE_WIDTH = 10.0;
 const BTN_CLICKED_CN = 'controls__color__clicked';
+
 // Dom Element
 const canvasParent = document.querySelector('#canvas');
 const canvas = document.querySelector("#jsCanvas");
@@ -17,12 +18,14 @@ const resetBtn = document.querySelector('#jsReset');
 const resizeBtn = document.querySelector('#jsResize');
 const widthControls = document.querySelector('#jsWidth');
 const heightControls = document.querySelector('#jsHeight');
+
 // Variable
 let canvasWidth = 600;
 let canvasHeight = 500;
 let isPainting = false;
 let isFilling = false;
-// Init setting
+
+// Init setting 초기화 세팅 
 const initSetting = () => {
   // Set width, height of canvas
   canvas.width = canvasWidth;
@@ -35,15 +38,7 @@ const initSetting = () => {
   ctx.lineWidth = INITIAL_LINE_WIDTH;
   // Set initial line width
   range.value = INITIAL_LINE_WIDTH;
-  // Set initial mode to paint
-  isFilling = false;
-  mode.innerText = 'fill';
-  // Set all button unclicked
-  colors.forEach(color=>{
-    color.classList.remove(BTN_CLICKED_CN);
-  })
-  // Set black button clicked
-  colors[0].classList.add(BTN_CLICKED_CN);
+
 }
 // Init event
 const initEvent = () => {
@@ -56,18 +51,12 @@ const initEvent = () => {
     canvas.addEventListener("click", handleCanvasClick);
     canvas.addEventListener("contextmenu", handleContextMenu)
   }
-  // Add event to color
-  colors.forEach(color => {
-    color.addEventListener('click', handleColorClick);
-  })
+
   // Add event to range
   if (range) {
     range.addEventListener("input", handleRangeChange);
   }
-  // Add event to mode button
-  if (mode) {
-    mode.addEventListener("click", hanldeModeClick);
-  }
+
   // Add event to save button
   if (saveBtn) {
     saveBtn.addEventListener("click", handleSaveClick);
@@ -76,10 +65,7 @@ const initEvent = () => {
   if (resetBtn) {
     resetBtn.addEventListener("click", handleResetClick);
   }
-  // Add event to my color
-  if (myColorContorls) {
-    myColorContorls.addEventListener("change", handleMyColorChange);
-  }
+
   // Add event to resize button
   if (resizeBtn) {
     resizeBtn.addEventListener("click", handleResizeClick);
@@ -125,18 +111,7 @@ const handleRangeChange = (e) => {
   const size = e.target.value;
   ctx.lineWidth = size;
 }
-// Event of change mode
-const hanldeModeClick = () => {
-  if (isFilling === true) {
-    // If current mode is paint
-    isFilling = false;
-    mode.innerText = 'fill';
-  } else {
-    // If current mode is fill
-    isFilling = true;
-    mode.innerText = 'paint';
-  }
-}
+
 // Event of click canvas
 const handleCanvasClick = () => {
   if (isFilling === true) {
@@ -166,6 +141,7 @@ const handleMyColorChange = (e) => {
   ctx.fillStyle = color;
   myColor.style.backgroundColor = color;
 }
+
 // Event of Change size of canvas
 const handleResizeClick = (e) => {
   if (widthControls.value>window.innerWidth){
