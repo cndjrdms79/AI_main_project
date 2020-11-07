@@ -11,7 +11,7 @@
 <script class="jsbin"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-<form action="http://localhost:5000/fileUpload" method="POST" enctype="multipart/form-data">
+<form id="fileform" action="http://localhost:5000/fileUpload" method="POST" enctype="multipart/form-data">
 	<div class="file-upload">
 		<div class="image-upload-wrap" aria-disabled="false">
 			<div class="drag-text">
@@ -31,7 +31,7 @@
 			<div class="image-title-wrap">
 				<button class="remove-image" type="button" onclick="removeUpload()">Change
 					Image</button>
-				<input class="remove-image" type="submit" name="Next Step">
+				<button class="remove-image" type="button" OnClick="FileBt();">Next Step</button>
 			</div>
 		</div>
 	</div>
@@ -41,6 +41,13 @@
 <script src="resources/js/html2canvas.js"></script>
 <!-- Dropzone.js -->
 <script src="resources/js/dropzone.js"></script>
+
+<script>
+//파일 전송 Submit 이후 페이지 이동
+function FileBt(){
+	document.getElementById("fileform").submit();
+}
+</script>
 
 </br>
 </br>
