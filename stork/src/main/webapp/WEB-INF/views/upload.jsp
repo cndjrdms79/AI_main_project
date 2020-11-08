@@ -11,7 +11,7 @@
 	<form action = "${pageContext.request.contextPath }/upload.do" method="post" enctype="multipart/form-data">
 		<label><input type="file" name="upload" /></label>
 		<label><input type="file" name="upload" /></label>
-		<input type="submit" value="upload" />
+		<input type="submit" value="Next Step" />
 	
 	</form>
 

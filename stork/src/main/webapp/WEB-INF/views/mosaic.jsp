@@ -11,11 +11,11 @@
 <script class="jsbin"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-<form id="fileform" action="http://localhost:5000/mosaicUpload" method="POST" enctype="multipart/form-data">
+	<form action = "${pageContext.request.contextPath }/mosaic.do" method="post" enctype="multipart/form-data">
 	<div class="file-upload">
 		<div class="image-upload-wrap" aria-disabled="false">
 			<div class="drag-text">
-				<input class="file-upload-input" type='file' name='file'
+				<input class="file-upload-input" type="file" name="mosaicupload"
 					onchange="readURL(this);" accept="image/*" autocomplete="off" />
 				<h3>Choose an image</h3>
 				<div class="upload-box">
@@ -31,7 +31,7 @@
 			<div class="image-title-wrap">
 				<button class="remove-image" type="button" onclick="removeUpload()">Change
 					Image</button>
-				<button class="remove-image" type="button" OnClick="FileBt();">Next Step</button>
+				<input class="remove-image" type="submit" value="Next Step" />
 			</div>
 		</div>
 	</div>
@@ -41,13 +41,6 @@
 <script src="resources/js/html2canvas.js"></script>
 <!-- Dropzone.js -->
 <script src="resources/js/dropzone.js"></script>
-
-<script>
-//파일 전송 Submit 이후 페이지 이동
-function FileBt(){
-	document.getElementById("fileform").submit();
-}
-</script>
 
 </br>
 </br>

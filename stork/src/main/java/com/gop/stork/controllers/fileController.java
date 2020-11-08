@@ -3,6 +3,7 @@ package com.gop.stork.controllers;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,11 +13,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class fileController {
-	@RequestMapping("/upload.do")
-	public String uploadFile(MultipartFile[] upload, HttpServletRequest request) {
+	@RequestMapping("/mosaic.do")
+	public String mosaicupload(MultipartFile[] mosaicupload, HttpServletRequest request) {
 		
 		// 파일이 업로드 될 경로 설정 
-		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/file");
+		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/mosaic");
 		
 		// 위에 설정한 경로의 폴더가 없을 경우 생성 
 		File dir = new File(saveDir);
@@ -25,18 +26,83 @@ public class fileController {
 		}
 		
 		// file upload 
-		for(MultipartFile f : upload) {
+		for(MultipartFile f : mosaicupload) {
 			if(!f.isEmpty()) {
 				// 기존 파일 이름을 받고 확장자 저장 
 				String orifileName = f.getOriginalFilename();
 				String ext = orifileName.substring(orifileName.lastIndexOf("."));
 				
-				// 이름 값 변경을 위한 설정 
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmssSSS");
-				int rand = (int)(Math.random()*1000);
+				// 파일 이름 변경 
+				UUID uid = UUID.randomUUID();
+				String reName = uid.toString() + "_" + ext;
+				
+				// 파일 저장 
+				try {
+					f.transferTo(new File(saveDir + "/" + reName));
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return "redirect:mosaic"; 
+	}
+	
+	@RequestMapping("/inpainting.do")
+	public String inpaintingupload(MultipartFile[] inpaintingupload, HttpServletRequest request) {
+		
+		// 파일이 업로드 될 경로 설정 
+		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/inpainting");
+		
+		// 위에 설정한 경로의 폴더가 없을 경우 생성 
+		File dir = new File(saveDir);
+		if(!dir.exists()) {
+			dir.mkdirs();
+		}
+		
+		// file upload 
+		for(MultipartFile f : inpaintingupload) {
+			if(!f.isEmpty()) {
+				// 기존 파일 이름을 받고 확장자 저장 
+				String orifileName = f.getOriginalFilename();
+				String ext = orifileName.substring(orifileName.lastIndexOf("."));
 				
 				// 파일 이름 변경 
-				String reName = sdf.format(System.currentTimeMillis()) + "_" + rand + ext;
+				UUID uid = UUID.randomUUID();
+				String reName = uid.toString() + "_" + ext;
+				
+				// 파일 저장 
+				try {
+					f.transferTo(new File(saveDir + "/" + reName));
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return "redirect:mosaic"; 
+	}
+	
+	@RequestMapping("/watershed.do")
+	public String uploadFile(MultipartFile[] watershedupload, HttpServletRequest request) {
+		
+		// 파일이 업로드 될 경로 설정 
+		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/watershed");
+		
+		// 위에 설정한 경로의 폴더가 없을 경우 생성 
+		File dir = new File(saveDir);
+		if(!dir.exists()) {
+			dir.mkdirs();
+		}
+		
+		// file upload 
+		for(MultipartFile f : watershedupload) {
+			if(!f.isEmpty()) {
+				// 기존 파일 이름을 받고 확장자 저장 
+				String orifileName = f.getOriginalFilename();
+				String ext = orifileName.substring(orifileName.lastIndexOf("."));
+				
+				// 파일 이름 변경 
+				UUID uid = UUID.randomUUID();
+				String reName = uid.toString() + "_" + ext;
 				
 				// 파일 저장 
 				try {
