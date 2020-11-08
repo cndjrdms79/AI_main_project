@@ -40,8 +40,7 @@ public class storkControllerTest {
 	}
 	
 	@RequestMapping("/cropper")
-	public String cropper(HttpServletRequest request) {
-		request.getAttribute("path");
+	public String cropper() {
 		return "cropper";
 	}
 	
