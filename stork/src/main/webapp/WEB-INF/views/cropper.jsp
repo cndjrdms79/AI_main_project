@@ -27,9 +27,9 @@
     <p>The image displays in its natural size, so the size of the crop box equals the real cropped size.</p>
     <h3>Image</h3>
     <div>
-      <img id="image" src="resources/img/chicago.jpg" alt="Picture">
+      <img id="image" src="<%= request.getAttribute("path") %>" alt="Picture">
     </div>
-    <h3>Result</h3>
+    <h3>CROP</h3>
     <p>
       <button type="button" id="button">Crop</button>
     </p>
