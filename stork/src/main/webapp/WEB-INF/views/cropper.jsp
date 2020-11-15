@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -15,7 +16,6 @@
       margin: 20px auto;
       max-width: 100%;
     }
-
     img {
       max-width: 100%;
     }
@@ -48,12 +48,10 @@
           // Zoom the image to its natural size
           cropper.zoomTo(1);
         },
-
         crop: function (event) {
           data.textContent = JSON.stringify(cropper.getData());
           cropBoxData.textContent = JSON.stringify(cropper.getCropBoxData());
         },
-
         zoom: function (event) {
           // Keep the image in its natural size
           if (event.detail.oldRatio === 1) {
@@ -61,7 +59,6 @@
           }
         },
       });
-
       button.onclick = function () {
         result.innerHTML = '';
         result.appendChild(cropper.getCroppedCanvas());

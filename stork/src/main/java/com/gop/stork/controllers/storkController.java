@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class storkControllerTest {
+public class storkController {
 
 	@GetMapping({"", "/"})
 	public String index() {
@@ -34,9 +34,9 @@ public class storkControllerTest {
 		return "watershed";
 	}
 	
-	@GetMapping("/paint")
-	public String paint() {
-		return "paint";
+	@RequestMapping("/masking")
+	public String masking() {
+		return "masking";
 	}
 	
 	@RequestMapping("/cropper")
@@ -44,8 +44,8 @@ public class storkControllerTest {
 		return "cropper";
 	}
 	
-	@GetMapping("/upload")
-	public String upload() {
-		return "upload";
+	@RequestMapping("/result")
+	public String result() {
+		return "result";
 	}
 }

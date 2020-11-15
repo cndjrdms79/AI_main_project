@@ -11,7 +11,7 @@
 <script class="jsbin"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
-	<form action = "${pageContext.request.contextPath }/mosaic.do" method="post" enctype="multipart/form-data">
+<form action = "${pageContext.request.contextPath }/mosaic.do" method="post" enctype="multipart/form-data">
 	<div class="file-upload">
 		<div class="image-upload-wrap" aria-disabled="false">
 			<div class="drag-text">
@@ -35,10 +35,9 @@
 			</div>
 		</div>
 	</div>
+	
 </form>
 
-<script src="resources/js/FileSaver.js"></script>
-<script src="resources/js/html2canvas.js"></script>
 <!-- Dropzone.js -->
 <script src="resources/js/dropzone.js"></script>
 

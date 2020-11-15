@@ -37,8 +37,6 @@
 	</div>
 </form>
 
-<script src="resources/js/FileSaver.js"></script>
-<script src="resources/js/html2canvas.js"></script>
 <!-- Dropzone.js -->
 <script src="resources/js/dropzone.js"></script>
 
