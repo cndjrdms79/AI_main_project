@@ -2,7 +2,16 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="layout/header.jsp"%>
+ <style>
+   .container {
+     margin: 20px auto;
+     max-width: 60%;
+   }
 
+   img {
+     max-width: 100%;
+   }
+ </style>
 </br>
 </br>
 </br>
@@ -14,18 +23,17 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 
-
+<div class="container">
 <div class="controls">
 	<canvas id="jsCanvas" class="canvas"></canvas>
 	<button class="remove-image" type="button" onclick="saveImage();">Next Step</button>
 	<div class="controls__range">
-		<input type="range" id="jsRange" min="0.1" max="5.0" value="2.5"
-			step="0.1" />
+		<input type="range" id="jsRange" min="5" max="25" value="15" step="1" />
 	</div>
 	<button id="btn1" class="remove-image">Next Step</button>
     <div id="result"></div>
 </div>
-
+</div>
 
 <!-- masking.js -->
 <script>
@@ -39,6 +47,7 @@ const saveBtn = document.getElementById("jsSave");
 
 const INITIAL_COLOR = 'white'
 const INITIAL_BG_COLOR = 'black';
+const INITIAL_LINE_WIDTH = 15;
 
 var img = new Image();
 img.onload = function() {
@@ -53,7 +62,9 @@ ctx.fillStyle = img;
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
-ctx.lineWidth = 10;
+ctx.lineWidth = INITIAL_LINE_WIDTH;
+// Set initial line width
+range.value = INITIAL_LINE_WIDTH;
 
 let painting = false;
 let filling = false;

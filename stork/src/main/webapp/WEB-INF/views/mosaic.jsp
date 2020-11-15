@@ -9,10 +9,11 @@
 
 <!-- partial:index.partial.html -->
 <script class="jsbin"
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+</script>
 
 <form action = "${pageContext.request.contextPath }/mosaic.do" method="post" enctype="multipart/form-data">
-	<div class="file-upload">
+	<div class="file-upload" >
 		<div class="image-upload-wrap" aria-disabled="false">
 			<div class="drag-text">
 				<input class="file-upload-input" type="file" name="mosaicupload"
