@@ -37,7 +37,7 @@ public class fileController {
 				
 				// 파일 이름 변경 
 				UUID uid = UUID.randomUUID();
-				String reName = uid.toString() + "_" + ext;
+				String reName = uid.toString() + ext;
 				
 				// 변수 지정
 				String path = "/resources/upload/mosaic/" + reName;
@@ -75,10 +75,10 @@ public class fileController {
 				
 				// 파일 이름 변경 
 				UUID uid = UUID.randomUUID();
-				String reName = uid.toString() + "_" + ext;
+				String reName = uid.toString() + ext;
 				
 				// 변수 지정
-				String path = "/resources/upload/inpainting/" + reName;
+				String path = "/resources/upload/inpainting/" +reName;
 						
 				// 파일 저장 
 				try {
@@ -89,7 +89,7 @@ public class fileController {
 				}
 			}
 		}	
-		return "forward:masking" ;
+		return "forward:paint" ;
 	}
 	
 	@RequestMapping("/watershed.do")
@@ -113,7 +113,7 @@ public class fileController {
 				
 				// 파일 이름 변경 
 				UUID uid = UUID.randomUUID();
-				String reName = uid.toString() + "_" + ext;
+				String reName = uid.toString() + ext;
 				
 				// 변수 지정
 				String path = "/resources/upload/watershed/" + reName;
@@ -129,11 +129,12 @@ public class fileController {
 		}	
 		return "forward:cropper" ;
 	}
+	
 	// cropped image ajax
 	@RequestMapping("/imsi")
 	public String imsi(@RequestParam("file") MultipartFile blob, HttpServletRequest request) {
 		// 파일이 업로드 될 경로 설정 
-		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/mosaic/new/");
+		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/Modify/");
 		
 		// 위에 설정한 경로의 폴더가 없을 경우 생성 
 		File dir = new File(saveDir);
@@ -150,10 +151,8 @@ public class fileController {
 			try {
 				blob.transferTo(new File(saveDir + reName));
 			} catch (IllegalStateException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

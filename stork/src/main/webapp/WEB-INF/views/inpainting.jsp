@@ -19,8 +19,7 @@
 					onchange="readURL(this);" accept="image/*" autocomplete="off" />
 				<h3>Choose an image</h3>
 				<div class="upload-box">
-					<i aria-hidden="true" class="ui icon cloud-upload-line"></i><span>Drop
-						files to upload or click anywhere in the box to browse.</span>
+					<i aria-hidden="true" class="ui icon cloud-upload-line"></i><span>Drop files to upload or click anywhere in the box to browse.</span>
 				</div>
 				<p>Photos must be either JPG or PNG format.</p>
 			</div>
@@ -29,8 +28,7 @@
 		<div class="file-upload-content">
 			<img class="file-upload-image" src="#" alt="your image" />
 			<div class="image-title-wrap">
-				<button class="remove-image" type="button" onclick="removeUpload()">Change
-					Image</button>
+				<button class="remove-image" type="button" onclick="removeUpload()">Change Image</button>
 				<input class="remove-image" type="submit" value="Next Step" />
 			</div>
 		</div>

@@ -3,9 +3,9 @@
 
 <%@ include file="layout/header.jsp"%>
 
-</br>
-</br>
-</br>
+<br/>
+<br/>
+<br/>
 
 <!-- partial:index.partial.html -->
 <script class="jsbin"
@@ -36,13 +36,13 @@
 			</div>
 		</div>
 	</div>
-	
 </form>
 
 <!-- Dropzone.js -->
 <script src="resources/js/dropzone.js"></script>
 
-</br>
-</br>
-</br>
+<br/>
+<br/>
+<br/>
+
 <%@ include file="layout/footer.jsp"%>

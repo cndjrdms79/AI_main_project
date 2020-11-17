@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="resources/img/ImageInpainting2.gif" alt="Los Angeles">
+			<img src="resources/img/ImageInpainting2.gif" alt="inpainting">
 			<div class="container">
 				<div class="carousel-caption">
 					<h1>Image Inpainting</h1>
