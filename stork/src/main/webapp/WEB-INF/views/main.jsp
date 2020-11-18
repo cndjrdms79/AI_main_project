@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="layout/header.jsp" %>
 
+<div class="content">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
 		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -54,7 +55,7 @@
 		aria-hidden="true"></span> <span class="sr-only">Next</span>
 	</a>
 </div>
-
+</div>
 <!-- Marketing messaging and featurettes
   ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->

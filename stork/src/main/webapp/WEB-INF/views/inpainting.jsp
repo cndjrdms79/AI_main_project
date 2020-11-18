@@ -3,15 +3,12 @@
 
 <%@ include file="layout/header.jsp"%>
 
-</br>
-</br>
-</br>
-
 <!-- partial:index.partial.html -->
 <script class="jsbin"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <form action = "${pageContext.request.contextPath }/inpainting.do" method="post" enctype="multipart/form-data">
+	<h2 class="title">Inpainting Image File Upload</h2>	
 	<div class="file-upload">
 		<div class="image-upload-wrap" aria-disabled="false">
 			<div class="drag-text">
@@ -38,8 +35,4 @@
 <!-- Dropzone.js -->
 <script src="resources/js/dropzone.js"></script>
 
-
-</br>
-</br>
-</br>
 <%@ include file="layout/footer.jsp"%>

@@ -157,7 +157,7 @@ public class fileController {
 			}
 		}
 		
-		return "main";
+		return "forward:main";
 	}
 	
 	@RequestMapping(value="/masking.do", method=RequestMethod.POST)
@@ -165,4 +165,5 @@ public class fileController {
     public String simpleWithObject(Jamong jamong) {
         return jamong.getName().replace("data:image/png;base64,", "");
     }
+	
 }

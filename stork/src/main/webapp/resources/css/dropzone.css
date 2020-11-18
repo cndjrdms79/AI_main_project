@@ -1,7 +1,12 @@
-@import
-	url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i)
-	;
-div.file-upload {
+.title{
+  color: 1px solid rgba(0,0,0,0.8);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 30px
+}
+
+.file-upload {
 	outline: 1px solid #424242;
 	background-color: #fff;
 	width: 512px;
@@ -14,7 +19,10 @@ div.file-upload {
 	-ms-flex-align: center;
 	align-items: center;
 	-ms-flex-line-pack: center;
-	align-content: center
+	align-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
 }
 
 .image-upload-wrap {
@@ -73,7 +81,8 @@ div.file-upload {
 	padding: 28px;
 	color: #616161;
 	font-size: 14px;
-	line-height: 18px
+	line-height: 18px;
+	text-align: center;
 }
 
 .upload-box i {

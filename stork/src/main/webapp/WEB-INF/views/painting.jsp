@@ -5,16 +5,7 @@
 <!-- masking css -->
 <link rel ="stylesheet" href="resources/css/reset.css"/>
 <link rel ="stylesheet" href="resources/css/style.css"/> 
-  <style>
-    .container {
-      margin: 20px auto;
-      max-width: 60%;
-    }
 
-    img {
-      max-width: 100%;
-    }
-  </style>
 	<!-- Body -->
     <div class="title">let's masking</div>
     <div class="content">
@@ -53,11 +44,12 @@ image.src = "<%=request.getAttribute("path")%>";
 let isPainting = false;
 let isFilling = false;
 
+
 // Init setting
 const initSetting = () => {
   image.onload = function() {
     canvas.width = image.width;
-    canvas.height = image.height;
+    canvas.height = image.height; 
   	ctx.drawImage(image, 0, 0, image.width, image.height);
   	ctx.strokeStyle = INITIAL_COLOR;
     ctx.lineWidth = INITIAL_LINE_WIDTH;
@@ -65,7 +57,7 @@ const initSetting = () => {
     range.value = INITIAL_LINE_WIDTH;
   }
   canvas.width = image.width;
-  canvas.height = image.height;
+  canvas.height = image.height; 
   ctx.drawImage(image, 0, 0, image.width, image.height);
   ctx.strokeStyle = INITIAL_COLOR;
   ctx.lineWidth = INITIAL_LINE_WIDTH;
@@ -156,8 +148,8 @@ const handleResetClick = () => {
 // Event of Click next button
 const handleNextClick = () => {
 	canvas.toBlob(function (blob) {
-	       var formData = new FormData();
-	       formData.set('file', blob);
+	    var formData = new FormData();
+	    formData.set('file', blob);
 	       
 		console.log(formData.get("file"));
 		console.log('file upload...');
