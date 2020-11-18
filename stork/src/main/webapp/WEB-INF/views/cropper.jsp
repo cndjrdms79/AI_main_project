@@ -31,8 +31,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
   <script src="resources/js/cropper.js"></script>
-  <script src="resources/js/FileSaver.js"></script>
-  <script src="resources/js/html2canvas.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', function () {
       var image = document.getElementById('image');
@@ -73,6 +71,8 @@
 
 	              success: function () {
 	                console.log("complete");
+	                alert("저장되엇습니다.")
+	                $(location).attr("href", "main");
 	              },
 
 	              error: function () {

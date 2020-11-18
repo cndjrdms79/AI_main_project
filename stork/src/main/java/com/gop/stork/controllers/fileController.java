@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class fileController {
@@ -132,6 +133,7 @@ public class fileController {
 	
 	// cropped image ajax
 	@RequestMapping("/imsi")
+	@ResponseBody
 	public String imsi(@RequestParam("file") MultipartFile blob, HttpServletRequest request) {
 		// 파일이 업로드 될 경로 설정 
 		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/Modify/");
@@ -157,7 +159,7 @@ public class fileController {
 			}
 		}
 		
-		return "forward:main";
+		return "ok";
 	}
 	
 	@RequestMapping(value="/masking.do", method=RequestMethod.POST)
