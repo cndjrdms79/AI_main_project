@@ -10,7 +10,7 @@
   <style>
     .container {
       margin: 20px auto;
-      max-width: 60%;
+      max-width: 70%;
     }
 
     img {
