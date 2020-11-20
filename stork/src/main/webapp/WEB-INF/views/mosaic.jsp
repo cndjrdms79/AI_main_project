@@ -27,8 +27,7 @@
 		<div class="file-upload-content">
 			<img class="file-upload-image" src="#" alt="your image" />
 			<div class="image-title-wrap">
-				<button class="remove-image" type="button" onclick="removeUpload()">Change
-					Image</button>
+				<button class="remove-image" type="button" onclick="removeUpload()">Change Image</button>
 				<input class="remove-image" type="submit" value="Next Step" />
 			</div>
 		</div>

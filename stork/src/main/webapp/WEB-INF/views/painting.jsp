@@ -3,11 +3,10 @@
 <!-- header -->	
 <%@ include file="layout/header.jsp"%>	
 <!-- masking css -->
-<link rel ="stylesheet" href="resources/css/reset.css"/>
 <link rel ="stylesheet" href="resources/css/style.css"/> 
 
 	<!-- Body -->
-    <div class="title">let's masking</div>
+    <h2 class="title">Let's Masking</h2>
     <div class="content">
       <canvas id="jsCanvas" class="canvas" ></canvas>
     </div>
@@ -163,6 +162,8 @@ const handleNextClick = () => {
 	
 	             success: function () {
 	               console.log("complete");
+	               alert("그림판 크기 지정하는 거 포기")
+	               $(location).attr("href", "main");
 	             },
 	
 	             error: function () {

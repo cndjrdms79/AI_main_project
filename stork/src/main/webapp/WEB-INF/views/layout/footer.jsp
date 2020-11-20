@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <footer class="container">
-  <p class="float-right"><a href="">Back to top</a></p>
+  <p class="float-right"><a href="#">Back to top</a></p>
   <p>© 2020 Stork, Inc.</p>
 </footer>
 

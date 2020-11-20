@@ -22,8 +22,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Dropzone.css -->
 <link rel="stylesheet" type="text/css" href="resources/css/dropzone.css">	
-<!-- cropper.css -->
-<link rel="stylesheet" href="resources/css/cropper.css">
+
 <!-- crousel css -->
 <style>
 /* Make the image fully responsive */
@@ -40,12 +39,13 @@
 	-ms-user-select: none;
 	user-select: none;
 }
-
+/* 
 @media ( min-width : 768px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
 	}
 }
+ */
 </style>
 
 </head>
