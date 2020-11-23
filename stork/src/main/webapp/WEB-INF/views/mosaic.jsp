@@ -9,7 +9,7 @@
 </script>
 
 <form action = "${pageContext.request.contextPath }/mosaic.do" method="post" enctype="multipart/form-data">
-   	<h2 class="title">Mosaic Image File Upload</h2>	
+   	<h2 class="title">Training Image File Upload</h2>	
 	<div class="file-upload" >
 		<div class="image-upload-wrap" aria-disabled="false">
 			<div class="drag-text">
