@@ -61,7 +61,7 @@
     <div class="img">
 	    <img id="image" src="${path }" alt="image">
 	    <div class="controls">
-	    	<button id="crop">CROP and Next Step</button>
+	    	<button id="crop">Next Step</button>
 	    </div>
 	</div>  
   </div>	
@@ -94,13 +94,10 @@
           
           canvas.toBlob(function (blob) {
             var formData = new FormData();
-            formData.set('file', blob);
-            
-			console.log(formData.get("file"));
-			console.log('file upload...');
+            formData.set('image', blob);
 
 			$.ajax({
-	              url : 'imsi',
+	              url : 'cropper.do',
 	              type: 'post',
 	              data: formData,
 	              processData: false,
@@ -108,7 +105,6 @@
 
 	              success: function () {
 	                console.log("complete");
-	                alert("저장되었습니다.")
 	                $(location).attr("href", "main");
 	              },
 

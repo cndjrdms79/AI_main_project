@@ -23,6 +23,11 @@ public class storkController {
 		return "mosaic";
 	}
 	
+	@RequestMapping("/mosaic2")
+	public String mosaic2() {
+		return "mosaic2";
+	}
+	
 	@GetMapping("/inpainting")
 	public String inpainting() {
 		return "inpainting";
@@ -42,10 +47,4 @@ public class storkController {
 	public String cropper() {
 		return "cropper";
 	}
-	
-	@RequestMapping("/paint")
-	public String paint() {
-		return "painting";
-	}
-
 }
