@@ -47,4 +47,19 @@ public class storkController {
 	public String cropper() {
 		return "cropper";
 	}
+	
+	@RequestMapping("/mosaicresult")
+	public String mosaicresult() {
+		return "mosaicresult";
+	}
+	
+	@RequestMapping("/inpaintingresult")
+	public String inpaintingresult() {
+		return "inpaintingresult";
+	}
+	
+	@RequestMapping("/watershedresult")
+	public String watershedresult() {
+		return "watershedresult";
+	}
 }

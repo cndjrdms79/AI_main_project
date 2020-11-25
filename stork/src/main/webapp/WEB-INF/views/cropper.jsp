@@ -103,9 +103,8 @@
 	              processData: false,
 	              contentType: false,
 
-	              success: function () {
-	                console.log("complete");
-	                $(location).attr("href", "main");
+	              success: function (data) {            	
+	                $(location).attr("href", "watershedresult");
 	              },
 
 	              error: function () {

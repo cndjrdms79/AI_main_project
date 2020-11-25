@@ -1,30 +1,33 @@
 package com.gop.stork.controllers;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class mosaicController {
@@ -69,19 +72,18 @@ public class mosaicController {
 	@RequestMapping("/mosaic2.do")
 	@ResponseBody
 	public String mosaicfile(@RequestParam("maskname") String maskname,
-			@RequestParam("mosaicupload") MultipartFile[] mosaicupload, HttpServletRequest request) {
+			@RequestParam("mosaicupload") MultipartFile[] mosaicupload, HttpServletRequest request, HttpServletResponse response) {
 		// 파일이 업로드 될 경로 설정
 		String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/mosaic/");
-		String mask = maskname.replace("/resources/upload/mosaic/","");
-		System.out.println(mosaicupload);
+		String mask = maskname.replace("/resources/upload/mosaic/", "");
 		// 위에 설정한 경로의 폴더가 없을 경우 생성
 		File dir = new File(saveDir);
 		if (!dir.exists()) {
 			dir.mkdirs();
 		}
-
+		UUID uid = null;
 		String reName = null;
-
+		String plainimage = null;
 		// file upload
 		for (MultipartFile f : mosaicupload) {
 			if (!f.isEmpty()) {
@@ -90,9 +92,9 @@ public class mosaicController {
 				String ext = orifileName.substring(orifileName.lastIndexOf("."));
 
 				// 파일 이름 변경
-				UUID uid = UUID.randomUUID();
+				uid = UUID.randomUUID();
 				reName = uid.toString() + ext;
-
+				plainimage = saveDir + reName ;
 				// 파일 저장
 				try {
 					f.transferTo(new File(saveDir + reName));
@@ -143,8 +145,6 @@ public class mosaicController {
 		// File to binary
 		File maskfile = new File(saveDir + mask);
 		File file = new File(saveDir + reName);
-		System.out.println(maskfile.length());
-		System.out.println(file.length());
 
 		String out = new String();
 		FileInputStream fis1 = null;
@@ -157,8 +157,6 @@ public class mosaicController {
 		try {
 			fis1 = new FileInputStream(maskfile);
 			fis2 = new FileInputStream(file); // 파일객체를 FileInputStream으로 생성한다.
-			System.out.println(fis1);
-			System.out.println(fis2);
 		} catch (FileNotFoundException e) {
 			System.out.println("Exception position : FileUtil - fileToString(File file)");
 		}
@@ -180,7 +178,6 @@ public class mosaicController {
 				baos2.write(buf, 0, len2);
 			}
 			bytes2 = baos2.toByteArray(); // ByteArrayOutputStream 를 ByteArray 로 캐스팅한다.
-			System.out.println(bytes2.length);
 
 			fis2.close();
 			baos2.close();
@@ -200,6 +197,7 @@ public class mosaicController {
 			request1.writeBytes("Content-Type: image/jpeg" + crlf);
 			request1.writeBytes(crlf);
 			request1.write(bytes2);
+			System.out.println(bytes2);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -214,6 +212,52 @@ public class mosaicController {
 			e.printStackTrace();
 		}
 
-		return "main";
+		// 이미지 받기
+		InputStream responseStream = null;
+		try {
+			responseStream = new BufferedInputStream(httpConn.getInputStream());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		BufferedReader responseStreamReader = new BufferedReader(new InputStreamReader(responseStream));
+		String line = "";
+		StringBuilder stringBuilder = new StringBuilder();
+		try {
+			while ((line = responseStreamReader.readLine()) != null) {
+				stringBuilder.append(line).append("\n");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			responseStreamReader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		String strResponse = stringBuilder.toString();
+		byte[] bytes = Base64.decodeBase64(strResponse);
+
+		UUID uuid = UUID.randomUUID();
+		String saveDirec = request.getSession().getServletContext().getRealPath("/resources/upload/Modify/");
+		
+		String resultimage = saveDirec + uuid + ".png";
+		try {
+			File lOutFile = new File(resultimage);
+			FileOutputStream lFileOutputStream = new FileOutputStream(lOutFile);
+			lFileOutputStream.write(bytes);
+			lFileOutputStream.close();
+		} catch (Throwable e) {
+			e.printStackTrace(System.out);
+		}
+		
+		try {
+			response.sendRedirect("mosaicresult?before=" + reName + "&after=" + uuid + ".png");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return "ok";
 	}
 }

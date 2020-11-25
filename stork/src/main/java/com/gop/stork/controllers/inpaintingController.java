@@ -1,11 +1,16 @@
 package com.gop.stork.controllers;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -14,7 +19,9 @@ import java.net.URL;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,10 +70,9 @@ public class inpaintingController {
 	
 	@RequestMapping("/masking.do")
 	   @ResponseBody
-	   public String imsi(@RequestParam("image1") String imagename, @RequestParam("image2") MultipartFile blob,  HttpServletRequest request) {
+	   public String inpaintingfile(@RequestParam("image") MultipartFile blob,  HttpServletRequest request, HttpServletResponse response) {
 	      // 파일이 업로드 될 경로 설정 
 	      String saveDir = request.getSession().getServletContext().getRealPath("/resources/upload/inpainting/");
-	      String mask = imagename.replace("/resources/upload/inpainting/","");
 	      	      
 	      // 위에 설정한 경로의 폴더가 없을 경우 생성 
 	      File dir = new File(saveDir);
@@ -81,6 +87,7 @@ public class inpaintingController {
 	         
 	         try {
 	            blob.transferTo(new File(saveDir + reName));
+	            
 	         } catch (IllegalStateException e) {
 	            e.printStackTrace();
 	         } catch (IOException e) {
@@ -127,64 +134,41 @@ public class inpaintingController {
 	      DataOutputStream request1 = new DataOutputStream(httpConnOutputStream);
 	      
 	      //File to binary
-	      File plain = new File(saveDir + mask);
 	      File file = new File(saveDir + reName);
-	      System.out.println(file.length());
 	      
 	      String out = new String();
-	      FileInputStream fis1 = null;
-	      FileInputStream fis2 = null;
-	      ByteArrayOutputStream baos1 = new ByteArrayOutputStream();
-	      ByteArrayOutputStream baos2 = new ByteArrayOutputStream();
-	      byte[] bytes1 = null;
-	      byte[] bytes2 = null;
+	      FileInputStream fis = null;
+	      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	      byte[] bytes = null;
 	          
 	          try {                         
-	             fis1 = new FileInputStream(plain);
-	             fis2 = new FileInputStream(file);   // 파일객체를 FileInputStream으로 생성한다.
-	             System.out.println(fis2);
+	             fis = new FileInputStream(file);
 	          } catch (FileNotFoundException e) {
 	              System.out.println("Exception position : FileUtil - fileToString(File file)");
 	          }
 	       
-	          int len1 = 0;
-	          int len2 = 0;
+	          int len = 0;
 	          byte[] buf = new byte[1024];
 	          try {
-	              while ((len1 = fis1.read(buf)) != -1) {         //FileInputStream을 ByteArrayOutputStream에 쓴다.
-	                  baos1.write(buf, 0, len1);
+	              while ((len = fis.read(buf)) != -1) {         //FileInputStream을 ByteArrayOutputStream에 쓴다.
+	                  baos.write(buf, 0, len);
 	              }
 	       
-	              bytes1 = baos1.toByteArray();         //ByteArrayOutputStream 를 ByteArray 로 캐스팅한다.
+	              bytes = baos.toByteArray();         //ByteArrayOutputStream 를 ByteArray 로 캐스팅한다.
 
-	              fis1.close();
-	              baos1.close();
+	              fis.close();
+	              baos.close();
 	              
-	              
-	              while ((len2 = fis2.read(buf)) != -1) {         //FileInputStream을 ByteArrayOutputStream에 쓴다.
-	                  baos2.write(buf, 0, len2);
-	              }
-	              bytes2 = baos2.toByteArray();         //ByteArrayOutputStream 를 ByteArray 로 캐스팅한다.
-	              System.out.println(bytes2.length);
-
-	              fis2.close();
-	              baos2.close();
 	          } catch (IOException e) {
 	              System.out.println("Exception position : FileUtil - fileToString(File file)");
 	          }
 	          
 	      try {
 	         request1.writeBytes(twoHyphens + boundary + crlf);
-	         request1.writeBytes("Content-Disposition: form-data; name=\"origin\";filename=\""+ mask + crlf);
-	         request1.writeBytes("Content-Type: image/jpeg" + crlf);
-	         request1.writeBytes(crlf);
-	         request1.write(bytes1);
-	         request1.writeBytes(crlf);
-	         request1.writeBytes(twoHyphens + boundary + crlf);
 	         request1.writeBytes("Content-Disposition: form-data; name=\"edit\";filename=\""+ reName + crlf);
 	         request1.writeBytes("Content-Type: image/png" + crlf);
 	         request1.writeBytes(crlf);
-	         request1.write(bytes2);
+	         request1.write(bytes);
 	      } catch (IOException e) {
 	         e.printStackTrace();
 	      }
@@ -198,7 +182,48 @@ public class inpaintingController {
 	      } catch (IOException e) {
 	         e.printStackTrace();
 	      }
+	   // 이미지 받기
+			InputStream responseStream = null;
+			try {
+				responseStream = new BufferedInputStream(httpConn.getInputStream());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 
-	      return "main";
+			BufferedReader responseStreamReader = new BufferedReader(new InputStreamReader(responseStream));
+			String line = "";
+			StringBuilder stringBuilder = new StringBuilder();
+			try {
+				while ((line = responseStreamReader.readLine()) != null) {
+					stringBuilder.append(line).append("\n");
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			try {
+				responseStreamReader.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			String strResponse = stringBuilder.toString();
+			byte[] bytes1 = Base64.decodeBase64(strResponse);
+
+			UUID uuid = UUID.randomUUID();
+			String saveDirec = request.getSession().getServletContext().getRealPath("/resources/upload/Modify/");
+			
+			String resultimage = saveDirec + uuid + ".png";
+			try {
+				File lOutFile = new File(resultimage);
+				FileOutputStream lFileOutputStream = new FileOutputStream(lOutFile);
+				lFileOutputStream.write(bytes1);
+				lFileOutputStream.close();
+			} catch (Throwable e) {
+				e.printStackTrace(System.out);
+			}
+			String resultname= uuid + ".png";
+			
+			
+			return resultname;
 	   }
 }

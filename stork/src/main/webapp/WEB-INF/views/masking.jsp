@@ -148,8 +148,7 @@ const handleResetClick = () => {
 const handleNextClick = () => {
 	canvas.toBlob(function (blob) {
 	    var formData = new FormData();
-	    formData.append('image1', "<%=request.getAttribute("path")%>");
-	    formData.set('image2', blob);
+	    formData.set('image', blob);
 	
 		$.ajax({
 	             url : 'masking.do',
@@ -158,9 +157,8 @@ const handleNextClick = () => {
 	             processData: false,
 	             contentType: false,
 	
-	             success: function () {
-	               console.log("complete");
-	               $(location).attr("href", "main");
+	             success: function (data) {
+	            	 $(location).attr("href", "inpaintingresult");
 	             },
 	
 	             error: function () {
