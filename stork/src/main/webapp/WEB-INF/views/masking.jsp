@@ -15,7 +15,6 @@
 		<input type="range" id="jsRange" min="5" max="25" value="15" step="1" />
 	</div>
 	<div class="controls__btns">
-		<button id="jsSave">Save</button>
 		<button id="jsReset">Reset</button>
 		<button id="jsNext">Next</button>
 	</div>

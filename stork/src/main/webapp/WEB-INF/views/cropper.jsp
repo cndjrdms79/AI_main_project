@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
   <style>
     .content {
-    	width: 700px;
+    	width: 600px;
 		height: 512px;
 		display: -ms-flexbox;
 		display: flex;
@@ -35,12 +35,12 @@
 	  flex-direction: column;
 	  align-items: center;
 	}
-	button{
+	.Btn{
 	  all: unset;
 	  cursor: pointer;
 	  background-color: white;
 	  padding: 5px 0px;
-	  width: 200px;
+	  width: 140px;
 	  text-align: center;
 	  border-radius: 5px;
 	  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -50,7 +50,7 @@
 	  font-weight: 600;
 	  font-size: 12px;
 	}
-	button:active{
+	.Btn:active{
 	  transform: scale(0.98);
 	}
   </style>
@@ -61,7 +61,7 @@
     <div class="img">
 	    <img id="image" src="${path }" alt="image">
 	    <div class="controls">
-	    	<button id="crop">Next Step</button>
+	    	<button id="crop" class="Btn">Next Step</button>
 	    </div>
 	</div>  
   </div>	

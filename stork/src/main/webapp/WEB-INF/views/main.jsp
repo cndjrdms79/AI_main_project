@@ -3,12 +3,12 @@
 <%@ include file="layout/header.jsp" %>
 
 <style>
-	button{
+	.Btn{
 	  all: unset;
 	  cursor: pointer;
 	  background-color: white;
 	  padding: 5px 0px;
-	  width: 400px;
+	  width: 440px;
 	  text-align: center;
 	  border-radius: 5px;
 	  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -17,8 +17,9 @@
 	  text-transform: uppercase;
 	  font-weight: 600;
 	  font-size: 12px;
+	  margin-top: 5px;
 	}
-	button:active{
+	.Btn:active{
 	  transform: scale(0.98);
 	}
 </style>
@@ -92,10 +93,10 @@
 			<p >1. 모자이크 처리하지 않을 인물을 얼굴 사진을 업로드합니다.</p>
 			<p >2. 모자이크 처리하고 싶은 사진을 업로드합니다.</p>
 			<p >3. 모자이크 처리된 사진을 저장합니다.</p>
-			<a href="/mosaic"><button>Let's Mosaic</button></a>
 		</div>
 		<div class="col-md-5">
 			<img src = "resources/img/mosaic.png" width="500" height="500" class="img-fluid img-thumbnail" />
+			<a href="/mosaic"><button class="Btn">Let's Mosaic</button></a>
 		</div>
 	</div>
 
@@ -108,11 +109,11 @@
 			<p>1. 원하는 이미지를 선택합니다.</p>
 			<p>2. 이미지에서 원하지 않는 부분을 마스킹합니다.</p>
 			<p>3. 마스킹한 부분이 자연스럽게 수정된 사진을 저장합니다.</p>
-			<a href="/inpainting"><button>Let's Inpainting</button></a>
 			<p></p>
 		</div>
 		<div class="col-md-5 order-md-1">
-			<img src="resources/img/ImageInpainting.gif " width="500" height="500" class="img-fluid img-thumbnail" />
+			<img src="resources/img/ImageInpainting.gif " width="500" height="500" class="img-fluid img-thumbnail" style="margin-top: 15px;"/>
+			<a href="/inpainting"><button class="Btn">Let's Inpainting</button></a>
 		</div>
 	</div>
 
@@ -125,10 +126,10 @@
 			<p>1. 다음 기능을 원하는 이미지를 선택합니다.</p>
 			<p>2. 원하는 객체가 있는 부분을 마우스를 이용해 지정합니다.</p>
 			<p>3. 분할 처리된 객체를 저장합니다.</p>
-			<a href="/watershed"><button>Let's Watershed</button></a>
 		</div>
 		<div class="col-md-5">
-			<img src="resources/img/ImageInpainting2.gif " width="500" height="500" class="img-fluid img-thumbnail" />
+			<img src="resources/img/ImageInpainting2.gif " width="500" height="500" class="img-fluid img-thumbnail"/>
+			<a href="/watershed"><button class="Btn">Let's Watershed</button></a>
 		</div>
 	</div>
 

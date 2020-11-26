@@ -3,7 +3,7 @@
 <!-- Header -->
 <%@ include file="layout/header.jsp"%>
 <style>
-	button{
+	.Btn{
 	  all: unset;
 	  cursor: pointer;
 	  background-color: white;
@@ -19,11 +19,11 @@
 	  font-size: 12px;
 	  margin-top: 5px;
 	}
-	button:active{
+	.Btn:active{
 	  transform: scale(0.98);
 	}
     .first {
-	   	width: 700px;
+	   	width: 600px;
 		height: 512px;
 		display: -ms-flexbox;
 		display: flex;
@@ -34,14 +34,12 @@
 		align-items: center;
 		-ms-flex-line-pack: center;
 		align-content: center;
-		margin-left: auto;
-		margin-right: auto;
 		float: left;
-		margin-left: 20px;
+		margin-left: 80px;
 		margin-bottom: 134px;
     }
     .second {
-	   	width: 700px;
+	   	width: 600px;
 		height: 512px;
 		display: -ms-flexbox;
 		display: flex;
@@ -58,19 +56,31 @@
 		margin-left: 5%;
 		margin-bottom: 134px
     }
+    #Result {
+		max-height: 580px;
+		max-width: 500px;
+		margin: auto;
+		padding: 20px;
+	}
+	#Result2 {
+		max-height: 580px;
+		max-width: 500px;
+		margin: auto;
+		padding: 20px;
+	}
+	
 </style>
 
 <div class="first">
-	<h3 class="title">Original Image</h3>
+	<h3 class="title" style="margin-left: 120px">Original Image</h3>
 	<div id="Result"></div>
+	<a href="/main"><button class="Btn" style="margin-left: 70px">Home</button></a>
 </div>
 <div class="second">
-	<h3 class="title">Result Image</h3>
+	<h3 class="title" style="margin-left: 140px">Result Image</h3> 
 	<div id="Result2"></div>
-	<button id="Save">SAVE</button>
+	<button id="Save" class="Btn" style="margin-left: 95px">SAVE</button>
 </div>
-
-
 
 <script>
 var para = document.location.href.split("&")[1];
@@ -90,12 +100,11 @@ result.appendChild(image1);
 result2.appendChild(image2);
 
 document.getElementById("Save").addEventListener("click", imgSave);
-
 function imgSave() {
 	var image = "/resources/upload/Modify/" + para2;
 	var link = document.createElement("a");
 	link.href = image;
-	link.download = "test";
+	link.download = "result";
 	link.click();
 } 
 </script>

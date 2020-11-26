@@ -16,8 +16,8 @@ body{
 */
 .content{	
 	outline: 1px solid #424242;
-	width: 700px;
-	height: 462px;
+	width: 550px;
+	height: 450px;
 	display: -ms-flexbox;
 	display: flex;
 	display: center;
@@ -58,7 +58,7 @@ button{
   cursor: pointer;
   background-color: white;
   padding: 5px 0px;
-  width: 80px;
+  width: 140px;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -67,6 +67,7 @@ button{
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
+  margin-bottom: 12px;
 }
 button:active{
   transform: scale(0.98);

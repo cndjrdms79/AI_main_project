@@ -3,6 +3,27 @@
 
 <%@ include file="layout/header.jsp"%>
 
+<style>
+	.Btn{
+	  all: unset;
+	  cursor: pointer;
+	  background-color: white;
+	  padding: 5px 0px;
+	  width: 140px;
+	  text-align: center;
+	  border-radius: 5px;
+	  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+	  border: 1px solid rgba(0,0,0,0.2);
+	  color: 1px solid rgba(0,0,0,0.8);
+	  text-transform: uppercase;
+	  font-weight: 600;
+	  font-size: 12px;
+	}
+	.Btn:active{
+	  transform: scale(0.98);
+	}
+</style>
+
 <!-- partial:index.partial.html -->
 <script class="jsbin"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -25,8 +46,8 @@
 		<div class="file-upload-content">
 			<img class="file-upload-image" src="#" alt="your image" />
 			<div class="image-title-wrap">
-				<button class="remove-image" type="button" onclick="removeUpload()">Change Image</button>
-				<input class="remove-image" type="submit" value="Next Step" />
+				<button class="Btn" type="button" onclick="removeUpload()">Change Image</button>
+				<input class="Btn" type="submit" value="Next Step" />
 			</div>
 		</div>
 	</div>
