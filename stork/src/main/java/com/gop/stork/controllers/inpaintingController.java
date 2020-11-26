@@ -222,7 +222,7 @@ public class inpaintingController {
 				e.printStackTrace(System.out);
 			}
 			String resultname= uuid + ".png";
-			
+			System.out.println(resultname);
 			
 			return resultname;
 	   }

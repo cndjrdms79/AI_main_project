@@ -104,7 +104,7 @@
 	              contentType: false,
 
 	              success: function (data) {            	
-	                $(location).attr("href", "watershedresult");
+	                $(location).attr("href", "watershedresult?"+data+ "&<%=request.getAttribute("path")%>");
 	              },
 
 	              error: function () {

@@ -1,25 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- header -->	
-<%@ include file="layout/header.jsp"%>	
+<!-- header -->
+<%@ include file="layout/header.jsp"%>
 <!-- masking css -->
-<link rel ="stylesheet" href="resources/css/style.css"/> 
+<link rel="stylesheet" href="resources/css/style.css" />
 
-	<!-- Body -->
-    <h2 class="title">Let's Masking</h2>
-    <div class="content">
-      <canvas id="jsCanvas" class="canvas" ></canvas>
-    </div>
-    <div class="controls">
-      <div class="controls__range">
-        <input type="range" id="jsRange" min="5" max="25" value="15" step="1"/>
-      </div>
-      <div class="controls__btns">
-      	<button id="jsSave">Save</button>
-        <button id="jsReset">Reset</button>
-        <button id="jsNext">Next</button>
-      </div>
-    </div>
+<!-- Body -->
+<h2 class="title">Let's Masking</h2>
+<div class="content">
+	<canvas id="jsCanvas" class="canvas"></canvas>
+</div>
+<div class="controls">
+	<div class="controls__range">
+		<input type="range" id="jsRange" min="5" max="25" value="15" step="1" />
+	</div>
+	<div class="controls__btns">
+		<button id="jsSave">Save</button>
+		<button id="jsReset">Reset</button>
+		<button id="jsNext">Next</button>
+	</div>
+</div>
+<div id="resultDiv"></div>
 
 <!-- masking js -->
 <script>
@@ -158,12 +159,11 @@ const handleNextClick = () => {
 	             contentType: false,
 	
 	             success: function (data) {
-	            	 $(location).attr("href", "inpaintingresult");
+	            	 $(location).attr("href", "inpaintingresult?"+data+ "&<%=request.getAttribute("path")%>");
 	             },
-	
 	             error: function () {
-	           	console.log("error");
-	             },
+	           	   console.log("error");
+	             }
 	           });
 	  });  // Blob function 
 }
@@ -174,4 +174,4 @@ initEvent();
 
 </script>
 <!-- footer -->
-<%@ include file="layout/footer.jsp" %>
+<%@ include file="layout/footer.jsp"%>
